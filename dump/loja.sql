@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 03/04/2018 às 01:39
+-- Tempo de geração: 04/04/2018 às 00:06
 -- Versão do servidor: 10.0.34-MariaDB-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.28-0ubuntu0.16.04.1
 
@@ -63,11 +63,28 @@ CREATE TABLE `produtos` (
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usado`) VALUES
 (1, 'Carro', '20000.00', 'Descrição deste produto', 2, 0),
 (2, 'Motocicleta', '10000.00', 'Descrição deste produto', 3, 0),
-(8, 'Lata', '3.00', 'Lata velha furada e que não presta pra nada. Foi reciclada inúmeras vezes e tem que ser descartada permanentemente dessa vez.', 4, 0),
+(8, 'Latade chocolate', '3.00', 'Lata velha furada e que não presta pra nada. Foi reciclada inúmeras vezes e tem que ser descartada permanentemente dessa vez.', 4, 0),
 (10, 'Bola de Futebol', '40.00', 'Bola de futebol de couro', 1, 0),
-(11, 'Carro Audi A4', '500000.00', 'Carro muito desgastado', 3, 1),
-(12, 'Chocolate em Barra', '7.00', 'Chocolate da Chokito em barra', 4, 0),
-(13, 'Chocolate em Barra', '4.00', 'Chocolate da Chokito em barra', 4, 1);
+(11, 'Carro Audi A4', '500000.00', 'Carro muito desgastado', 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Fazendo dump de dados para tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
+(1, 'tharles@mail.com', '827ccb0eea8a706c4c34a16891f84e7b');
 
 --
 -- Índices de tabelas apagadas
@@ -86,6 +103,12 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
@@ -98,7 +121,12 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
